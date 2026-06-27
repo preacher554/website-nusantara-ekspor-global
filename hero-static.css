@@ -1,0 +1,30 @@
+/* Hero static override v0.3.1
+   Disables hero collage hover movement and zoom while preserving the current layout. */
+
+.panel,
+.panel img,
+.round-arrow {
+  transition: none;
+}
+
+.panel {
+  cursor: default;
+}
+
+.panel:hover {
+  transform: none;
+  box-shadow: 0 18px 34px rgba(10, 34, 23, 0.10);
+}
+
+.panel:hover img {
+  transform: translateX(-6%) scale(1.02);
+}
+
+.round-arrow {
+  cursor: default;
+}
+
+.round-arrow:hover {
+  transform: none;
+  box-shadow: none;
+}
