@@ -188,17 +188,61 @@ html[dir="rtl"] .floating-wa {
 
 .hero {
   position: relative;
-  min-height: 610px;
+  min-height: 750px;
   overflow: hidden;
-  padding-top: 22px;
+  padding-top: 60px;
   border-bottom: 1px solid var(--line);
   max-width: 100vw;
+  background: var(--bg);
 }
+
+.hero-curve-overlay {
+  position: absolute;
+  top: -2px; /* slight overlap to prevent bleeding */
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-curve-overlay svg {
+  display: block;
+  width: 100%;
+  height: clamp(140px, 20vw, 320px);
+  filter: drop-shadow(0 15px 15px rgba(6, 47, 29, 0.08));
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(185, 130, 47, 0.15);
+  transition: all 0.2s ease;
+}
+
+.nav-arrow:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+.nav-left { left: 30px; }
+.nav-right { right: 30px; }
 
 .hero-copy {
   position: relative;
   z-index: 4;
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
   text-align: center;
   pointer-events: none;
@@ -240,9 +284,9 @@ html[dir="rtl"] .floating-wa {
 .hero h1 {
   margin: 8px 0 10px;
   font-family: var(--serif);
-  font-size: clamp(42px, 4.7vw, 68px);
+  font-size: clamp(46px, 5.15vw, 72px);
   font-weight: 600;
-  line-height: 0.98;
+  line-height: 0.96;
   letter-spacing: 0;
 }
 
@@ -302,92 +346,80 @@ html[dir="rtl"] .floating-wa {
   font-size: 12px;
 }
 
-.collage {
+.hero-collage {
   position: absolute;
-  inset: 205px 0 0;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr 0.9fr 2.8fr 0.92fr 0.9fr 1.05fr;
-  align-items: end;
-  gap: 0;
-}
-
-.panel {
-  position: relative;
-  height: 372px;
-  margin: 0;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
   overflow: hidden;
-  background: #ece5d9;
-  border-left: 5px solid #fff;
-  border-right: 5px solid #fff;
-  transform: skewX(-9deg);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+  background: transparent;
+  border-radius: 0 0 24px 24px;
 }
 
-.panel img {
-  width: 122%;
+.hero-panel {
+  position: relative;
+  flex: 1 1 0;
   height: 100%;
-  max-width: none;
-  object-fit: cover;
-  transform: skewX(9deg) translateX(-8%);
-  filter: saturate(1.04) contrast(1.02);
+  min-width: 0;
+  margin-left: -120px;
+  background-repeat: no-repeat;
+  transition: transform 300ms ease-in-out, filter 300ms ease-in-out;
+  will-change: transform;
 }
 
-.panel-1,
-.panel-7 {
-  height: 428px;
-  opacity: 0.6;
-  border-radius: 38px 0 0 0;
+.hero-panel:first-child {
+  margin-left: 0;
 }
 
-.panel-2,
-.panel-6 {
-  height: 392px;
+/* 
+  Gap logic based on PRD reference:
+  Gap 1: \
+  Gap 2: /
+  Gap 3: \
+  Gap 4: /
+*/
+.panel-1 {
+  margin-left: 0;
+  clip-path: polygon(0 0, calc(100% - 120px) 0, 100% 100%, 0 100%);
+  background-image: url("assets/generated/hero-1.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.panel-3,
-.panel-5 {
-  height: 330px;
+.panel-2 {
+  clip-path: polygon(8px 0, calc(100% - 120px) 0, 100% 100%, 128px 100%);
+  background-image: url("assets/generated/hero-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.panel-3 {
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, calc(100% - 128px) 100%, 128px 100%);
+  background-image: url("assets/generated/hero-3.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .panel-4 {
-  height: 226px;
-  border-radius: 18px 18px 0 0;
-  transform: none;
+  clip-path: polygon(120px 0, 100% 0, calc(100% - 120px) 100%, 0 100%);
+  background-image: url("assets/generated/hero-4.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.panel-4 img {
-  width: 100%;
-  transform: none;
+.panel-5 {
+  clip-path: polygon(128px 0, 100% 0, 100% 100%, 8px 100%);
+  background-image: url("assets/generated/hero-new-highres.jpg");
+  background-size: cover;
+  background-position: 95% center;
 }
 
-.panel-1 {
-  transform: skewX(-9deg) translateX(-28px);
-}
-
-.panel-7 {
-  transform: skewX(-9deg) translateX(28px);
-}
-
-.round-arrow {
-  position: absolute;
-  top: 278px;
-  z-index: 5;
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.88);
-  color: var(--gold);
-  font-size: 28px;
-  cursor: pointer;
-}
-
-.round-arrow.left {
-  left: 28px;
-}
-
-.round-arrow.right {
-  right: 28px;
+.hero-panel:hover {
+  z-index: 10;
+  transform: scale(1.02);
+  filter: saturate(1.1) contrast(1.05);
 }
 
 .trust-strip {
@@ -423,30 +455,22 @@ html[dir="rtl"] .floating-wa {
   line-height: 1.45;
 }
 
-.line-icon {
+.trust-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 52px;
   height: 52px;
-  display: block;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
+  background: #fffaf2;
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  color: var(--green);
+  box-shadow: 0 4px 12px rgba(184, 130, 47, 0.08);
 }
 
-.sprout {
-  border-radius: 4px 28px 4px 28px;
-  border-color: #627d39;
-}
-
-.globe {
-  background: radial-gradient(circle, transparent 44%, var(--gold) 46%, transparent 48%);
-}
-
-.shield {
-  border-color: #4f6f3a;
-  border-radius: 50% 50% 44% 44%;
-}
-
-.box {
-  border-radius: 8px;
+.trust-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .featured,
@@ -1323,36 +1347,39 @@ html[dir="rtl"] .floating-wa {
     align-items: center;
   }
 
-  .collage {
-    position: relative;
-    inset: auto;
-    display: block;
-    width: 100%;
-    height: 285px;
-    margin-top: 24px;
-    border-radius: 0 32px 0 32px;
-    overflow: hidden;
-    border: 1px solid rgba(184, 130, 47, 0.25);
+  .hero-collage {
+    height: 250px;
+    margin: 22px -10px 0;
+    padding-inline: 4px;
+    overflow: visible;
   }
 
-  .panel {
-    display: none;
-    height: 100%;
-    transform: none;
-    border: 0;
+  .hero-panel {
+    height: calc(var(--panel-h, 220px) * 0.7);
+    margin-left: -10px;
+    background-size: 700% 156%;
   }
 
-  .panel img {
-    width: 100%;
-    transform: none;
+  .panel-a,
+  .panel-g {
+    --panel-y: 18px;
   }
 
-  .panel-4 {
-    display: block;
-    height: 100%;
+  .panel-b,
+  .panel-f {
+    --panel-y: 44px;
   }
 
-  .round-arrow,
+  .panel-c,
+  .panel-e {
+    --panel-y: 72px;
+  }
+
+  .panel-d {
+    --panel-y: 92px;
+    flex-grow: 1.25;
+  }
+
   .floating-wa {
     display: none;
   }

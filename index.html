@@ -15,9 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260627-company-name" />
-    <link rel="stylesheet" href="hero-collage.css?v=20260627-hero-collage-v2" />
-    <link rel="stylesheet" href="hero-static.css?v=20260627-hero-static-v1" />
+    <link rel="stylesheet" href="styles.css?v=20260627-hero-panels" />
   </head>
   <body>
     <header class="site-header" id="home">
@@ -52,11 +50,26 @@
     </header>
 
     <main class="native-page">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero" aria-label="Hero">
+        
+        <!-- Smooth Rounded Trapezoid Overlay -->
+        <div class="hero-curve-overlay" aria-hidden="true">
+          <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path d="M-50,-50 L1490,-50 L1490,90 L1030,260 L410,260 L-50,90 Z" fill="var(--bg)" stroke="var(--bg)" stroke-width="36" stroke-linejoin="round" />
+          </svg>
+        </div>
+
+        <button class="nav-arrow nav-left" aria-label="Previous slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="nav-arrow nav-right" aria-label="Next slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
         <div class="hero-copy">
           <p class="overline">Indonesian Coconut, Spices & Biomass Exporter</p>
           <div class="gold-divider" aria-hidden="true"></div>
-          <h1 id="hero-title">Premium Indonesian Coconut Products, Natural Spices & Biomass Energy Exporter</h1>
+          <h1 id="hero-title">Trusted Indonesian Export Partner</h1>
           <p class="hero-subtitle">
             PT Artha Prima Global supplies high-quality coconut derivatives,
             authentic Indonesian spices, and renewable biomass energy products
@@ -72,58 +85,47 @@
           </div>
         </div>
 
-        <button class="round-arrow left" type="button" aria-label="Previous product highlight">←</button>
-        <button class="round-arrow right" type="button" aria-label="Next product highlight">→</button>
-
-        <div class="collage" aria-label="Indonesian commodities gallery">
-          <figure class="panel panel-1">
-            <img src="assets/generated/hero-commodities.png" alt="Coconut products, coco peat, and Indonesian natural commodities" />
-          </figure>
-          <figure class="panel panel-2">
-            <img src="assets/generated/coconut-coir.png" alt="Coco peat and coir products" />
-          </figure>
-          <figure class="panel panel-3">
-            <img src="assets/generated/indonesian-spices.png" alt="Indonesian spices" />
-          </figure>
-          <figure class="panel panel-4">
-            <img src="assets/generated/hero-commodities.png" alt="Premium Indonesian commodities" />
-          </figure>
-          <figure class="panel panel-5">
-            <img src="assets/generated/indonesian-spices.png" alt="Turmeric, ginger, and spices" />
-          </figure>
-          <figure class="panel panel-6">
-            <img src="assets/generated/agricultural-commodities.png" alt="Agricultural commodities" />
-          </figure>
-          <figure class="panel panel-7">
-            <img src="assets/generated/coconut-coir.png" alt="Coconut charcoal and coir commodities" />
-          </figure>
+        <div class="hero-collage" aria-label="Premium Indonesian coconut, spice, and biomass export commodities">
+          <div class="hero-panel panel-1" style="--i: 0" role="img" aria-label="Coco peat blocks and coco fiber"></div>
+          <div class="hero-panel panel-2" style="--i: 1" role="img" aria-label="Cinnamon sticks and whole nutmegs"></div>
+          <div class="hero-panel panel-3" style="--i: 2" role="img" aria-label="Turmeric and ginger powder"></div>
+          <div class="hero-panel panel-4" style="--i: 3" role="img" aria-label="Wood pellets for biomass energy"></div>
+          <div class="hero-panel panel-5" style="--i: 4" role="img" aria-label="Coconut charcoal briquettes and coconut sugar"></div>
         </div>
       </section>
 
       <section class="trust-strip" id="quality" aria-label="Export quality highlights">
         <article>
-          <span class="line-icon sprout" aria-hidden="true"></span>
+          <div class="trust-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          </div>
           <div>
             <h3>Export Quality</h3>
             <p>Selected coconut products and spices prepared for international B2B buyers.</p>
           </div>
         </article>
         <article>
-          <span class="line-icon globe" aria-hidden="true"></span>
+          <div class="trust-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M17 18h1"></path><path d="M12 18h1"></path><path d="M7 18h1"></path></svg>
+          </div>
           <div>
             <h3>Factory Direct</h3>
             <p>Direct access to Indonesian producers with flexible MOQ and packing options.</p>
           </div>
         </article>
         <article>
-          <span class="line-icon shield" aria-hidden="true"></span>
+          <div class="trust-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+          </div>
           <div>
             <h3>Worldwide Shipping</h3>
             <p>FOB, CIF, CFR, and EXW coordination with complete export documents.</p>
           </div>
         </article>
         <article>
-          <span class="line-icon box" aria-hidden="true"></span>
+          <div class="trust-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+          </div>
           <div>
             <h3>Sustainable Products</h3>
             <p>OEM, private label, complete export documents, and biomass energy supply support.</p>
@@ -154,7 +156,7 @@
             </div>
           </article>
           <article class="feature-card">
-            <img src="assets/generated/agricultural-commodities.png" alt="Biomass energy and renewable Indonesian export products" />
+            <img src="assets/generated/hero-4.jpg" alt="Biomass energy and wood pellets" />
             <div>
               <h3>Biomass<br />Energy</h3>
               <p>Renewable biomass fuel products from Indonesia for industrial heating and sustainable energy supply.</p>
@@ -435,6 +437,6 @@
       </div>
     </dialog>
 
-    <script src="script.js?v=20260627-company-name"></script>
+    <script src="script.js?v=20260627-hero-panels"></script>
   </body>
 </html>
