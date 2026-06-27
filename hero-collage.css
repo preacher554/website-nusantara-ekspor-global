@@ -1,10 +1,10 @@
-/* Hero collage refinement v0.2.2
-   Uses absolute panel placement to match the reference hero composition more closely. */
+/* Hero collage replacement v0.3.0
+   Flow-based hero visual: text stays clean above, 7 interlocking slanted panels sit below like the reference. */
 
 .hero {
   position: relative;
-  min-height: 678px;
-  padding-top: 24px;
+  min-height: 0;
+  padding: 24px 0 0;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background: radial-gradient(circle at 50% 0, #ffffff 0, #fbfaf7 48%, #f5f1ea 100%);
@@ -12,9 +12,9 @@
 
 .hero-copy {
   position: relative;
-  z-index: 18;
-  max-width: 760px;
-  width: min(760px, calc(100% - 32px));
+  z-index: 10;
+  max-width: 780px;
+  width: min(780px, calc(100% - 32px));
   margin: 0 auto;
   text-align: center;
   pointer-events: none;
@@ -28,8 +28,6 @@
 }
 
 .hero-subtitle {
-  position: relative;
-  z-index: 19;
   width: min(690px, 90vw);
   margin: 0 auto 18px;
   color: var(--muted);
@@ -38,40 +36,49 @@
 }
 
 .hero-actions {
-  position: relative;
-  z-index: 20;
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 0;
   pointer-events: auto;
 }
 
 .collage {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: min(1536px, 100%);
-  height: 430px;
-  transform: translateX(-50%);
-  display: block;
+  position: relative;
+  left: auto;
+  bottom: auto;
   z-index: 4;
+  width: min(1536px, 100%);
+  height: 410px;
+  margin: -8px auto 0;
+  padding: 0 18px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  overflow: visible;
   isolation: isolate;
+  transform: none;
   pointer-events: auto;
 }
 
 .panel {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  flex: 0 0 170px;
+  height: 280px;
+  margin: 0 0 0 -34px;
   overflow: hidden;
-  margin: 0;
   border: 5px solid rgba(255, 255, 255, 0.98);
-  border-radius: 28px 28px 0 0;
+  border-radius: 26px 26px 0 0;
   background: #ece5da;
-  clip-path: polygon(13% 0, 100% 0, 87% 100%, 0 100%);
+  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
   transform-origin: center bottom;
   box-shadow: 0 18px 34px rgba(10, 34, 23, 0.10);
-  transition: transform 0.32s ease, box-shadow 0.32s ease, filter 0.32s ease, opacity 0.32s ease;
+  transition: transform 0.32s ease, box-shadow 0.32s ease, opacity 0.32s ease;
+}
+
+.panel:first-child {
+  margin-left: 0;
 }
 
 .panel img {
@@ -88,13 +95,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.08));
   pointer-events: none;
 }
 
 .panel-1,
 .panel-7 {
-  opacity: 0.5;
+  opacity: 0.52;
 }
 
 .panel-1::before,
@@ -108,55 +115,48 @@
 }
 
 .panel-1 {
-  left: -1.5%;
-  width: 18.5%;
-  height: 292px;
+  flex-basis: clamp(190px, 17vw, 260px);
+  height: 295px;
   z-index: 1;
   clip-path: polygon(0 0, 100% 8%, 86% 100%, 0 100%);
   border-top-left-radius: 78px;
 }
 
 .panel-2 {
-  left: 12.2%;
-  width: 17.6%;
-  height: 405px;
+  flex-basis: clamp(200px, 16.5vw, 252px);
+  height: 408px;
   z-index: 5;
 }
 
 .panel-3 {
-  left: 25.9%;
-  width: 14.3%;
-  height: 315px;
+  flex-basis: clamp(150px, 12vw, 186px);
+  height: 318px;
   z-index: 6;
 }
 
 .panel-4 {
-  left: 35.5%;
-  width: 31.6%;
-  height: 224px;
+  flex-basis: clamp(430px, 32vw, 540px);
+  height: 228px;
   z-index: 8;
   clip-path: polygon(4% 0, 96% 0, 91% 100%, 9% 100%);
   border-radius: 16px 16px 0 0;
 }
 
 .panel-5 {
-  left: 63.2%;
-  width: 14.5%;
-  height: 282px;
+  flex-basis: clamp(156px, 12.5vw, 192px);
+  height: 288px;
   z-index: 6;
 }
 
 .panel-6 {
-  left: 73.6%;
-  width: 17.5%;
-  height: 408px;
+  flex-basis: clamp(200px, 16.5vw, 252px);
+  height: 410px;
   z-index: 5;
 }
 
 .panel-7 {
-  right: -1.4%;
-  width: 18.4%;
-  height: 326px;
+  flex-basis: clamp(190px, 17vw, 260px);
+  height: 330px;
   z-index: 1;
   clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
   border-top-right-radius: 78px;
@@ -175,7 +175,7 @@
 .round-arrow {
   position: absolute;
   top: auto;
-  bottom: 180px;
+  bottom: 178px;
   z-index: 24;
   width: 54px;
   height: 54px;
@@ -203,36 +203,29 @@
   right: 26px;
 }
 
-@media (min-width: 1200px) {
-  .hero-copy {
-    margin-bottom: 122px;
-  }
-}
-
 @media (max-width: 1280px) {
-  .hero {
-    min-height: 640px;
-  }
-
   .hero h1 {
     font-size: clamp(39px, 4.1vw, 58px);
   }
 
   .collage {
-    height: 388px;
+    height: 382px;
+    margin-top: -2px;
+    padding: 0 12px;
   }
 
   .panel {
+    margin-left: -26px;
     border-width: 4px;
   }
 
-  .panel-1 { left: -1.8%; width: 18.2%; height: 255px; }
-  .panel-2 { left: 12.6%; width: 17%; height: 350px; }
-  .panel-3 { left: 26%; width: 13.8%; height: 278px; }
-  .panel-4 { left: 35.5%; width: 31.4%; height: 198px; }
-  .panel-5 { left: 63.4%; width: 14%; height: 246px; }
-  .panel-6 { left: 73.8%; width: 17%; height: 352px; }
-  .panel-7 { right: -1.8%; width: 18.2%; height: 288px; }
+  .panel-1 { flex-basis: 180px; height: 255px; }
+  .panel-2 { flex-basis: 198px; height: 352px; }
+  .panel-3 { flex-basis: 150px; height: 278px; }
+  .panel-4 { flex-basis: 410px; height: 198px; }
+  .panel-5 { flex-basis: 158px; height: 246px; }
+  .panel-6 { flex-basis: 198px; height: 354px; }
+  .panel-7 { flex-basis: 180px; height: 288px; }
 
   .round-arrow {
     bottom: 164px;
@@ -241,12 +234,7 @@
 
 @media (max-width: 960px) {
   .hero {
-    min-height: auto;
     padding-bottom: 26px;
-  }
-
-  .hero-copy {
-    margin-bottom: 0;
   }
 
   .hero h1 {
@@ -254,15 +242,11 @@
   }
 
   .collage {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: 100%;
     height: 280px;
     margin-top: 24px;
     padding: 0 14px 8px;
     overflow-x: auto;
-    transform: none;
+    justify-content: flex-start;
     scrollbar-width: none;
   }
 
@@ -271,15 +255,10 @@
   }
 
   .panel {
-    position: relative;
-    left: auto !important;
-    right: auto !important;
-    display: inline-block;
-    width: 180px !important;
+    flex: 0 0 180px;
     min-width: 180px;
     height: 250px !important;
     margin-left: -14px;
-    vertical-align: bottom;
   }
 
   .panel:first-child {
@@ -287,7 +266,7 @@
   }
 
   .panel-4 {
-    width: 280px !important;
+    flex-basis: 280px;
     min-width: 280px;
     height: 210px !important;
   }
