@@ -1,0 +1,282 @@
+/* Hero collage refinement v0.2
+   Implements a 7-panel interlocking polygon collage with hover lift + zoom. */
+
+.hero {
+  position: relative;
+  min-height: 680px;
+  padding-top: 26px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(circle at 50% 0, #ffffff 0, #fbfaf7 48%, #f5f1ea 100%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 12;
+  max-width: 760px;
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero h1 {
+  margin: 8px 0 12px;
+  font-family: var(--serif);
+  font-size: clamp(48px, 5.4vw, 74px);
+  line-height: 0.96;
+}
+
+.hero-subtitle {
+  width: min(700px, 90vw);
+  margin: 0 auto 22px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  pointer-events: auto;
+}
+
+.collage {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(1520px, calc(100% - 52px));
+  height: 365px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  isolation: isolate;
+  z-index: 4;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 176px;
+  height: 280px;
+  margin: 0 0 0 -28px;
+  border: 4px solid rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  background: #ece5da;
+  clip-path: polygon(18% 0, 100% 0, 82% 100%, 0 100%);
+  transform-origin: center bottom;
+  box-shadow: 0 16px 32px rgba(10, 34, 23, 0.10);
+  transition: transform 0.32s ease, box-shadow 0.32s ease, filter 0.32s ease, opacity 0.32s ease;
+}
+
+.panel:first-child {
+  margin-left: 0;
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+  border-top-left-radius: 42px;
+}
+
+.panel:last-child {
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  border-top-right-radius: 42px;
+}
+
+.panel img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 0.32s ease, filter 0.32s ease;
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.10));
+  pointer-events: none;
+}
+
+.panel-1,
+.panel-7 {
+  opacity: 0.55;
+}
+
+.panel-1::before,
+.panel-7::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.24);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.panel-1 {
+  flex-basis: 210px;
+  height: 292px;
+  z-index: 1;
+}
+
+.panel-2 {
+  flex-basis: 225px;
+  height: 406px;
+  z-index: 5;
+}
+
+.panel-3 {
+  flex-basis: 176px;
+  height: 316px;
+  z-index: 6;
+}
+
+.panel-4 {
+  flex-basis: 470px;
+  height: 208px;
+  z-index: 8;
+  clip-path: polygon(3% 0, 97% 0, 92% 100%, 8% 100%);
+  border-radius: 18px 18px 0 0;
+}
+
+.panel-5 {
+  flex-basis: 190px;
+  height: 274px;
+  z-index: 6;
+}
+
+.panel-6 {
+  flex-basis: 220px;
+  height: 408px;
+  z-index: 5;
+}
+
+.panel-7 {
+  flex-basis: 214px;
+  height: 332px;
+  z-index: 1;
+}
+
+.panel:hover {
+  z-index: 30;
+  transform: translateY(-10px) scale(1.08);
+  box-shadow: 0 26px 44px rgba(9, 35, 24, 0.22);
+}
+
+.panel:hover img {
+  transform: scale(1.12);
+}
+
+.round-arrow {
+  position: absolute;
+  top: auto;
+  bottom: 165px;
+  z-index: 14;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(185, 130, 47, 0.85);
+  border-radius: 50%;
+  background: rgba(255, 250, 242, 0.94);
+  color: var(--gold);
+  font-size: 28px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.round-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.round-arrow.left {
+  left: 26px;
+}
+
+.round-arrow.right {
+  right: 26px;
+}
+
+@media (min-width: 1200px) {
+  .hero-copy {
+    margin-bottom: 150px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    min-height: 630px;
+  }
+
+  .collage {
+    width: min(1360px, calc(100% - 26px));
+    height: 320px;
+  }
+
+  .panel {
+    margin-left: -22px;
+    border-width: 3px;
+  }
+
+  .panel-1 { flex-basis: 180px; height: 255px; }
+  .panel-2 { flex-basis: 190px; height: 350px; }
+  .panel-3 { flex-basis: 150px; height: 276px; }
+  .panel-4 { flex-basis: 380px; height: 188px; }
+  .panel-5 { flex-basis: 160px; height: 240px; }
+  .panel-6 { flex-basis: 190px; height: 350px; }
+  .panel-7 { flex-basis: 180px; height: 285px; }
+
+  .round-arrow {
+    bottom: 145px;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 26px;
+  }
+
+  .hero-copy {
+    margin-bottom: 0;
+  }
+
+  .collage {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+    padding: 0 14px 8px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .collage::-webkit-scrollbar {
+    display: none;
+  }
+
+  .panel {
+    flex: 0 0 180px;
+    min-width: 180px;
+    height: 250px;
+    margin-left: -14px;
+  }
+
+  .panel-4 {
+    flex-basis: 280px;
+    min-width: 280px;
+    height: 210px;
+  }
+
+  .round-arrow {
+    display: none;
+  }
+}
