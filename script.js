@@ -51,7 +51,6 @@ const i18n = {
       readySource: "Ready to Source<br />from Indonesia?",
       readySourceCopy: "Send your product requirement and receive a structured RFQ response from our export team.",
       startInquiry: "Start Inquiry",
-      emailTeam: "or Email Our Team →",
       catalogTitle: "Export Commodity Catalog",
       catalogCopy: "Premium Indonesian coconut products, natural spices, and biomass energy for global B2B procurement",
       all: "All",
@@ -184,7 +183,6 @@ const i18n = {
       readySource: "Siap Sourcing<br />dari Indonesia?",
       readySourceCopy: "Kirim kebutuhan produk dan dapatkan respons RFQ terstruktur dari tim ekspor kami.",
       startInquiry: "Mulai Inquiry",
-      emailTeam: "atau Email Tim Kami →",
       catalogTitle: "Katalog Komoditas Ekspor",
       catalogCopy: "Produk kelapa, rempah alami, dan energi biomassa premium Indonesia untuk procurement B2B global",
       all: "Semua",
@@ -317,7 +315,6 @@ const i18n = {
       readySource: "جاهز للتوريد<br />من إندونيسيا؟",
       readySourceCopy: "أرسل متطلبات المنتج واحصل على رد RFQ منظم من فريق التصدير.",
       startInquiry: "ابدأ الطلب",
-      emailTeam: "أو راسل فريقنا →",
       catalogTitle: "كتالوج سلع التصدير",
       catalogCopy: "منتجات جوز الهند والتوابل الطبيعية وطاقة الكتلة الحيوية الإندونيسية للمشتريات العالمية B2B",
       all: "الكل",
@@ -450,7 +447,6 @@ const i18n = {
       readySource: "准备从<br />印尼采购？",
       readySourceCopy: "发送产品需求，获取出口团队的结构化 RFQ 回复。",
       startInquiry: "开始询价",
-      emailTeam: "或邮件联系我们 →",
       catalogTitle: "出口商品目录",
       catalogCopy: "面向全球 B2B 采购的印尼优质椰子产品、天然香料和生物质能源",
       all: "全部",
@@ -755,7 +751,7 @@ const products = [
     id: "01",
     name: "Coco Peat Block 5kg",
     category: "coconut",
-    image: "assets/crops/coco-peat-block.jpg",
+    image: "assets/generated/products/coco-peat-block-5kg.png",
     copy: "Premium compressed coco peat block made from selected coconut husk for agriculture, horticulture, greenhouse, and hydroponic farming.",
     applications: ["Hydroponics", "Greenhouse farming", "Seedling nursery", "Commercial agriculture", "Soil conditioner", "Potting mix"],
     features: ["100% natural coconut husk", "High water retention", "Excellent aeration", "Eco-friendly and biodegradable", "Low EC available", "Expansion up to approximately 70-75 liters"],
@@ -765,7 +761,7 @@ const products = [
     id: "02",
     name: "Coco Peat Grow Bag",
     category: "coconut",
-    image: "assets/crops/coco-grow-bag.jpg",
+    image: "assets/generated/products/coco-peat-grow-bag.png",
     copy: "Ready-to-use coco peat grow bag designed for modern greenhouse farming and commercial agriculture.",
     applications: ["Tomato farming", "Cucumber farming", "Strawberry farming", "Bell pepper farming", "Melon farming", "Greenhouse cultivation"],
     features: ["Ready to use", "Clean and uniform media", "Excellent drainage", "High water capacity", "Supports healthy root growth", "Suitable for long crop cycles"],
@@ -775,7 +771,7 @@ const products = [
     id: "03",
     name: "Coco Fiber",
     category: "coconut",
-    image: "assets/crops/coco-fiber.jpg",
+    image: "assets/generated/products/coco-fiber.png",
     copy: "Premium coconut fiber processed from coconut husk for industrial, agricultural, and eco-friendly material applications.",
     applications: ["Mattress industry", "Rope production", "Geotextile", "Erosion control", "Brush industry", "Horticulture", "Mulching"],
     features: ["Strong natural fiber", "Durable", "Eco-friendly", "Sustainable raw material", "Suitable for industrial use"],
@@ -785,7 +781,7 @@ const products = [
     id: "04",
     name: "Coco Bristle",
     category: "coconut",
-    image: "assets/crops/coco-fiber.jpg",
+    image: "assets/generated/products/coco-bristle.png",
     copy: "Premium coco bristle is a strong and durable natural fiber extracted from coconut husk for broom manufacturing, brush industry, cleaning tools, handicrafts, and industrial applications.",
     applications: ["Broom manufacturing", "Brush industry", "Cleaning tools", "Handicrafts", "Industrial fiber products", "Household products", "Eco-friendly material production"],
     features: ["Strong natural fiber", "Durable and flexible", "Eco-friendly material", "Sustainable raw material", "Clean and sorted quality", "Suitable for industrial use", "Available in different grades"],
@@ -795,7 +791,7 @@ const products = [
     id: "05",
     name: "Charcoal Briquette",
     category: "coconut",
-    image: "assets/crops/charcoal-briquette.jpg",
+    image: "assets/generated/products/charcoal-briquette.png",
     copy: "Premium coconut shell charcoal briquette for BBQ, shisha, restaurants, hotels, and retail markets.",
     applications: ["BBQ", "Shisha / hookah", "Restaurants", "Hotels", "Retail packaging"],
     features: ["Long burning time", "High heat output", "Low ash", "Low smoke", "Odorless", "No spark", "Export quality"],
@@ -806,7 +802,7 @@ const products = [
     id: "06",
     name: "Coconut Sugar",
     category: "coconut",
-    image: "assets/crops/coconut-sugar.jpg",
+    image: "assets/generated/products/coconut-sugar.png",
     copy: "Natural sweetener produced from coconut blossom nectar with a rich caramel taste for food, beverage, bakery, and healthy product industries.",
     applications: ["Food industry", "Beverage industry", "Bakery", "Chocolate and confectionery", "Retail packaging", "Healthy sweetener products"],
     features: ["Natural sweetener", "Rich caramel flavor", "No artificial additives", "Low glycemic index", "Organic option available", "Suitable for healthy food products"],
@@ -816,7 +812,7 @@ const products = [
     id: "07",
     name: "Palm Sugar",
     category: "coconut",
-    image: "assets/crops/coconut-sugar.jpg",
+    image: "assets/generated/products/palm-sugar.png",
     copy: "Traditional Indonesian palm sugar made from selected palm sap with natural sweetness, rich aroma, and authentic taste.",
     applications: ["Food manufacturing", "Traditional cuisine", "Beverage industry", "Bakery", "Retail packaging"],
     features: ["Natural sweetener", "Rich aroma", "Authentic Indonesian taste", "Available in block and powder", "No artificial additives", "Export quality"],
@@ -826,7 +822,7 @@ const products = [
     id: "08",
     name: "Nutmeg",
     category: "spice",
-    image: "assets/crops/nutmeg.jpg",
+    image: "assets/generated/products/nutmeg.png",
     copy: "Premium Indonesian nutmeg with strong aroma and high essential oil content for food, beverage, pharmaceutical, and spice processing industries.",
     applications: ["Food industry", "Spice blend", "Beverage", "Bakery", "Pharmaceutical", "Essential oil"],
     features: ["Strong natural aroma", "Selected Indonesian origin", "Export grade", "Available in whole and powder form"],
@@ -837,7 +833,7 @@ const products = [
     id: "09",
     name: "Cinnamon",
     category: "spice",
-    image: "assets/crops/cinnamon.jpg",
+    image: "assets/generated/products/cinnamon.png",
     copy: "Selected Indonesian cassia cinnamon with strong aroma and rich natural flavor for food, beverage, bakery, spice blend, and retail markets.",
     applications: ["Food industry", "Beverage", "Bakery", "Spice blend", "Retail packaging"],
     features: ["Strong aroma", "Rich flavor", "Export grade", "High oil content", "Clean and well-dried"],
@@ -848,7 +844,7 @@ const products = [
     id: "10",
     name: "Ginger Powder",
     category: "spice",
-    image: "assets/crops/ginger.jpg",
+    image: "assets/generated/products/ginger-powder.png",
     copy: "100% natural dried ginger powder made from selected ginger for beverages, herbal products, bakery, seasoning, and food manufacturing.",
     applications: ["Herbal drinks", "Tea blend", "Bakery", "Seasoning", "Food manufacturing", "Health product ingredients"],
     features: ["Natural ginger aroma", "Fine powder texture", "Food grade", "No artificial additives", "Strong warm flavor"],
@@ -858,7 +854,7 @@ const products = [
     id: "11",
     name: "Turmeric Powder",
     category: "spice",
-    image: "assets/crops/turmeric.jpg",
+    image: "assets/generated/products/turmeric-powder.png",
     copy: "Premium turmeric powder with bright golden color and natural aroma for food, herbal products, cosmetics, and spice blends.",
     applications: ["Food industry", "Herbal products", "Cosmetics", "Seasoning", "Spice blend", "Beverage"],
     features: ["Bright golden color", "Natural turmeric aroma", "Fine powder", "Food grade", "Export quality"],
@@ -868,7 +864,7 @@ const products = [
     id: "12",
     name: "Lemongrass Powder",
     category: "spice",
-    image: "assets/crops/lemongrass.jpg",
+    image: "assets/generated/products/lemongrass-powder.png",
     copy: "Natural lemongrass powder made from selected Indonesian lemongrass with a refreshing citrus aroma for tea, herbal drinks, seasoning, and cosmetic ingredients.",
     applications: ["Herbal tea", "Beverage", "Seasoning", "Spice blend", "Cosmetics", "Wellness products"],
     features: ["Fresh citrus aroma", "Natural ingredient", "Fine powder", "Food grade", "Export quality"],
@@ -878,7 +874,7 @@ const products = [
     id: "13",
     name: "Wood Pellet",
     category: "biomass",
-    image: "assets/crops/coconut-husk.jpg",
+    image: "assets/generated/products/wood-pellet.png",
     copy: "Premium wood pellet is a renewable biomass fuel produced from compressed wood material for industrial heating, power plants, boilers, household heating, and commercial energy applications.",
     applications: ["Biomass power plants", "Industrial boilers", "Commercial heating", "Household heating", "Agricultural drying", "Manufacturing facilities", "Renewable energy projects"],
     features: ["Renewable biomass fuel", "High calorific value", "Low moisture content", "Efficient combustion", "Low ash content", "Uniform pellet size", "Easy storage and handling", "Eco-friendly energy source"],
@@ -1080,7 +1076,6 @@ function applyStaticTranslations() {
   setHTML(".cta-panel h2", "readySource");
   setText(".cta-panel p", "readySourceCopy");
   setText(".cta-panel .btn", "startInquiry");
-  setText(".cta-panel .email-link", "emailTeam");
 
   setText("#catalog-title", "catalogTitle");
   setText(".catalog-head p", "catalogCopy");
@@ -1165,7 +1160,6 @@ function createProductCard(product) {
   article.className = "product-card";
   article.dataset.category = product.category;
   article.innerHTML = `
-    <span class="product-number">${product.id}</span>
     <img src="${product.image}" alt="${product.name}" loading="lazy" />
     <h4>${productName(product)}</h4>
     <button class="detail-btn" type="button">${text("viewDetails")}</button>
