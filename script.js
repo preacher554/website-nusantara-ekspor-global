@@ -1,4 +1,4 @@
-const whatsappNumber = "6287773522999";
+const whatsappNumber = "6281196984949";
 const languageSelect = document.querySelector("#languageSelect");
 
 const i18n = {
@@ -17,8 +17,8 @@ const i18n = {
       heroOverline: "Indonesian Coconut, Spices & Biomass Exporter",
       heroTitle: "Trusted Indonesian Export Partner",
       heroSubtitle: "PT Artha Prima Global supplies high-quality coconut derivatives, authentic Indonesian spices, and renewable biomass energy products from Indonesia to global buyers with reliable quality, competitive pricing, and worldwide shipping.",
-      requestQuote: "Request Free Quotation",
-      contactTeam: "Contact Export Team",
+      requestQuote: "Explore Our Products ->",
+      contactTeam: "WhatsApp Consultation",
       exportQuality: "Export Quality",
       exportQualityCopy: "Selected coconut products and spices prepared for international B2B buyers.",
       factoryDirect: "Factory Direct",
@@ -150,8 +150,8 @@ const i18n = {
       heroOverline: "Eksportir Kelapa, Rempah & Biomassa Indonesia",
       heroTitle: "Mitra Ekspor Indonesia Terpercaya",
       heroSubtitle: "PT Artha Prima Global memasok turunan kelapa berkualitas, rempah asli Indonesia, dan produk energi biomassa terbarukan untuk buyer global dengan kualitas andal, harga kompetitif, dan pengiriman internasional.",
-      requestQuote: "Minta Penawaran",
-      contactTeam: "Hubungi Tim Ekspor",
+      requestQuote: "Jelajahi Produk Kami ->",
+      contactTeam: "Konsultasi Whatsapp",
       exportQuality: "Kualitas Ekspor",
       exportQualityCopy: "Produk kelapa dan rempah terseleksi untuk kebutuhan buyer B2B internasional.",
       factoryDirect: "Akses Produsen",
@@ -283,8 +283,8 @@ const i18n = {
       heroOverline: "مصدر إندونيسي لجوز الهند والتوابل والكتلة الحيوية",
       heroTitle: "شريك تصدير إندونيسي موثوق",
       heroSubtitle: "توفر PT Artha Prima Global مشتقات جوز الهند عالية الجودة والتوابل الإندونيسية الأصلية ومنتجات طاقة الكتلة الحيوية المتجددة للمشترين العالميين بجودة موثوقة وأسعار تنافسية وشحن عالمي.",
-      requestQuote: "اطلب عرض سعر",
-      contactTeam: "تواصل مع فريق التصدير",
+      requestQuote: "استكشف منتجاتنا ->",
+      contactTeam: "استشارة واتساب",
       exportQuality: "جودة تصديرية",
       exportQualityCopy: "منتجات جوز الهند والتوابل مختارة للمشترين الدوليين في قطاع B2B.",
       factoryDirect: "مصدر مباشر",
@@ -416,8 +416,8 @@ const i18n = {
       heroOverline: "印尼椰子、香料与生物质出口商",
       heroTitle: "值得信赖的印尼出口伙伴",
       heroSubtitle: "PT Artha Prima Global 为全球买家供应高品质椰子衍生品、印尼天然香料和可再生生物质能源产品，提供稳定质量、竞争价格和国际运输支持。",
-      requestQuote: "获取报价",
-      contactTeam: "联系出口团队",
+      requestQuote: "浏览我们的产品 ->",
+      contactTeam: "WhatsApp 咨询",
       exportQuality: "出口品质",
       exportQualityCopy: "为国际 B2B 买家准备的精选椰子产品和香料。",
       factoryDirect: "源头供应",
